@@ -15,6 +15,15 @@ users = {
 def home_page():
     return render_template('home.html')
 
+@app.route('/handleLogin', methods=['POST'])
+def handle_login():
+    if request.method == 'POST':
+        username = request.form['emailPremade']
+        print(username)
+        if username in users:
+            return render_template('blogger.html', first_name=username)
+        else:
+            return render_template('login_form.html')
 
 @app.route('/handle_post', methods=['POST'])
 def handle_post():

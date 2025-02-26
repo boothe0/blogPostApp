@@ -41,7 +41,7 @@ def handle_post():
 
 @app.route('/login')
 def login_page():
-    return render_template('login_form.html')
+    return render_template('login_form.html', title='Login Page')
 
 @app.route('/blogger')
 def blogger_main_page():
